@@ -196,3 +196,15 @@ h3 {
 .alig-left {
     text-align: left;
 }
+
+.select-primario {    
+    color: var(--text-primario);
+    background-color: transparent;
+    width: auto;
+    border: solid 1px var(--border-primario);
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-bottom: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}

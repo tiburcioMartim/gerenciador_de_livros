@@ -10,6 +10,21 @@ require_once __DIR__ . '/../config/database.php';
     <link rel="stylesheet" href="/6_gerenciamento_de_livros/app/styles.css">
 </head>
 <body>
+
+    <?php
+        $stmt = $conn->prepare('SELECT * FROM registrar_livro ORDER BY id DESC;');
+        $result = $stmt->get_result();
+
+        // echo "<pre>";        
+        // echo var_dump($stmt->field_count);
+        // echo "</pre>";
+        echo var_dump($result->fetch_assoc());
+
+        // while ($rows = ) {
+        //     echo "Livro: " ;
+        // }
+    ?>
+
     <section class="wid-mob">
         <div class="alig-center">
             <?php  require_once __DIR__ . '/../includes/header.php'; ?>            
