@@ -1,5 +1,6 @@
 <?php 
 require_once __DIR__ . '/../config/database.php'; 
+require_once __DIR__ . '/../includes/functions.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -10,36 +11,13 @@ require_once __DIR__ . '/../config/database.php';
     <link rel="stylesheet" href="/6_gerenciamento_de_livros/app/styles.css">
 </head>
 <body>
-
-    <?php
-        $stmt = $conn->prepare('SELECT * FROM registrar_livro ORDER BY id DESC;');
-        $result = $stmt->get_result();
-
-        // echo "<pre>";        
-        // echo var_dump($stmt->field_count);
-        // echo "</pre>";
-        echo var_dump($result->fetch_assoc());
-
-        // while ($rows = ) {
-        //     echo "Livro: " ;
-        // }
-    ?>
-
     <section class="wid-mob">
         <div class="alig-center">
             <?php  require_once __DIR__ . '/../includes/header.php'; ?>            
         </div>
         <h3 class="alig-left">Meus livros</h3>
 
-        <div class="alig-left card-primary cont-livros">
-            <p><b>Nome:</b> O Hobbit</p>
-            <p><b>Publicação:</b> 1990</p>
-            <p><b>Gênero:</b> Fantasia</p>
-            <div class="cont-ico">
-                <img src="/6_gerenciamento_de_livros/app/assets/botao-apagar.png" alt="Botão de apagar">
-                <img src="/6_gerenciamento_de_livros/app/assets/caneta.png" alt="Caneta">
-            </div>
-        </div>
+        <?php MeusLivros($conn); ?>       
 
     </section>
 </body>

@@ -12,7 +12,8 @@
 
                 if ($stmt->execute()) {
                     if ($stmt->affected_rows > 0) {
-                        echo "<script>alert('Livro cadastrado.');</script>";
+                        echo "<script>alert('Livro cadastrado.');</script>";  
+                        $stmt->close();                      
                     }
                     // echo "<h3 style='color: green; text-align: center;'>Execute concluído.</h3>";
 
@@ -26,9 +27,35 @@
                 echo "<h3 style='color: red; text-align: center;'>Falha no prepare.</h3>";
             }      
         }
+        
     }
 
+    function MeusLivros($conn) {
+        $stmt = $conn->prepare('SELECT * FROM registrar_livro ORDER BY id DESC;');
 
+        if (!$stmt) {
+        die("<p style='color:#f00;'>Erro no prepare: " . htmlspecialchars($conn->error) . "</p>");
+        }
+
+        if (!$stmt->execute()) {
+            die("<p style='color:#f00;'>Erro no execute: " . htmlspecialchars($stmt->error) . "</p>");
+        }
+
+        $result = $stmt->get_result();
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='alig-left card-primary cont-livros'>
+                    <p><b>Nome: </b>" . $row['nome'] . "</p>
+                    <p><b>Publicação: </b>" . $row['ano_publicação'] . "</p>
+                    <p><b>Gênero: </b>" . $row['genero'] . "</p>
+                    <div class='cont-ico'>
+                        <img src='/6_gerenciamento_de_livros/app/assets/botao-apagar.png' alt='Botão de apagar'>
+                        <img src='/6_gerenciamento_de_livros/app/assets/caneta.png' alt='Caneta'>
+                    </div>
+                    </div>";
+        }
+        
+        $stmt->close();
+    }
 
 
 

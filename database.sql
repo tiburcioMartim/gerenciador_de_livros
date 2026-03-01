@@ -47,8 +47,8 @@ create table registrar_livro (
 -- Registrar livros     [C] IMPLEMENTADO
 -- insert into registrar_livro (nome, ano_publicação, genero) values (?, ?, ?)
 
--- Pesquisar livros     [R]
-select * from registrar_livro order by id desc;
+-- Pesquisar livros     [R] IMPLEMENTADO
+-- select * from registrar_livro order by id desc;
 
 -- Atualizar livro      [U]
 update registrar_livro set nome = 'nome novo' where id = 1;
