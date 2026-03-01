@@ -1,5 +1,6 @@
 <?php
-    function RegistrarLivro($conn, $dados) {
+    function RegistrarLivro($conn, $dados) 
+    {
         if (!empty($dados['registrar_livro'])) {
             $nome = $dados['nome_livro'];
             $ano_publicacao = $dados['ano_publicacao'];
@@ -30,11 +31,13 @@
         
     }
 
-    function MeusLivros($conn) {
+    function MeusLivros($conn) 
+    {
+        // busca todos os livros e deixa disponível em $livros para a view
         $stmt = $conn->prepare('SELECT * FROM registrar_livro ORDER BY id DESC;');
 
         if (!$stmt) {
-        die("<p style='color:#f00;'>Erro no prepare: " . htmlspecialchars($conn->error) . "</p>");
+            die("<p style='color:#f00;'>Erro no prepare: " . htmlspecialchars($conn->error) . "</p>");
         }
 
         if (!$stmt->execute()) {
@@ -42,21 +45,36 @@
         }
 
         $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='alig-left card-primary cont-livros'>
-                    <p><b>Nome: </b>" . $row['nome'] . "</p>
-                    <p><b>Publicação: </b>" . $row['ano_publicação'] . "</p>
-                    <p><b>Gênero: </b>" . $row['genero'] . "</p>
-                    <div class='cont-ico'>
-                        <img src='/6_gerenciamento_de_livros/app/assets/botao-apagar.png' alt='Botão de apagar'>
-                        <img src='/6_gerenciamento_de_livros/app/assets/caneta.png' alt='Caneta'>
-                    </div>
-                    </div>";
+        if (!$result) {
+            die("<p style='color:#f00;'>Erro no get_result: " . htmlspecialchars($stmt->error) . "</p>");
         }
-        
+
+        // atribui o array de resultados a uma variável global para uso na view
+        global $livros;
+        $livros = $result->fetch_all(MYSQLI_ASSOC);
+
         $stmt->close();
     }
 
+    function DeletarLivro(mysqli $conn, int $id): bool 
+    {
+        // prepara consulta usando placeholder e vincula parâmetro
+        $stmt = $conn->prepare('DELETE FROM registrar_livro WHERE id = ?');
+        if (!$stmt) {
+            die("<p style='color:#f00;'>Erro no prepare (DELETE): " . htmlspecialchars($conn->error) . "</p>");
+        }
+
+        $stmt->bind_param("i", $id);
+
+        $executar = $stmt->execute();
+
+        if (!$executar) {
+            die("<p style='color:#f00;'>Erro no execute (DELETE): " . htmlspecialchars($stmt->error) . "</p>");
+        }
+
+        $stmt->close();
+        return true;
+    }
 
 
 
