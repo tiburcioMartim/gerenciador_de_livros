@@ -1,24 +1,28 @@
 :root {
     color: white;
+
     --bg-primario: #151414;
     --bg-secundario: #222121;
-    /* --bg-terciario: #151414; */
 
     --text-primario: #d3d3d3;
     --text-secundario: #929191;
-    /* --text-terciario: #d3d3d3; */
 
     --border-primario: #323131;
     --border-secundario: #252525;
-    /* --border-terciario: #d3d3d3; */
 }
 
+
+/* RESET */
+
 * {
-    color: white important;
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
+    color: white;
 }
+
+
+/* BODY */
 
 body {
     display: flex;
@@ -27,6 +31,9 @@ body {
     background-color: var(--bg-primario);
     text-align: center;
 }
+
+
+/* LAYOUT PRINCIPAL */
 
 .wid-mob {
     display: flex;
@@ -45,6 +52,9 @@ header {
     justify-content: center;
 }
 
+
+/* ALINHAMENTOS */
+
 .alig-center {
     display: flex;
     flex-direction: column;
@@ -55,50 +65,59 @@ header {
 }
 
 .alig-left {
-    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
-    align-items: left;
-    height: fit-content;
     text-align: left;
     padding: 10px 20px;
 }
 
-.btn-primary, input {
-    color: var(--text-primario);
-    background-color: transparent;
-    width: 80%;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
-    padding: 10px 20px;
-    margin-bottom: 7px;
-    text-decoration: none;
-    cursor: pointer;
-}
 
-.btn-secundario {
-    color: var(--text-primario);
-    background-color: var(--border-primario);
-    width: auto;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
-    padding: 10px 20px;
-    margin-bottom: 7px;
-    text-decoration: none;
-    cursor: pointer;
+/* FORMULÁRIOS */
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 input {
     width: auto;
+    color: var(--text-primario);
+    background-color: transparent;
+    border: 1px solid var(--border-primario);
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-bottom: 7px;
 }
 
-.btn-primary:hover {   
+
+/* BOTÕES */
+
+.btn-primary {
+    width: 80%;
+    color: var(--text-primario);
+    background-color: transparent;
+    border: 1px solid var(--border-primario);
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-bottom: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
     color: var(--text-secundario);
     font-weight: bold;
-    width: 80%;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
     background-color: var(--border-primario);
+}
+
+.btn-secundario {
+    width: auto;
+    color: var(--text-primario);
+    background-color: var(--border-primario);
+    border: 1px solid var(--border-primario);
+    border-radius: 7px;
     padding: 10px 20px;
     margin-bottom: 7px;
     text-decoration: none;
@@ -106,29 +125,32 @@ input {
 }
 
 .btn-secundario:hover {
-    color: var(--text-primario);
     background-color: var(--border-secundario);
-    width: auto;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
-    padding: 10px 20px;
-    margin-bottom: 7px;
-    text-decoration: none;
+}
+
+.btn-meus_livros {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
 }
 
-.btn-primary:active {
+
+/* LINKS */
+
+.link-primario {
+    padding: 10px 0 0 5px;
     color: var(--text-secundario);
-    font-weight: bold;
-    width: 80%;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
-    background-color: var(--border-primario);
-    padding: 10px 20px;
-    margin-bottom: 7px;
     text-decoration: none;
-    cursor: pointer;
+    border: none;
 }
+
+.link-primario:hover {
+    color: var(--text-primario);
+}
+
+
+/* TEXTOS */
 
 .p-pequeno {
     color: var(--text-secundario);
@@ -138,13 +160,7 @@ input {
 }
 
 .p-default {
-    margin: 0 0 40px 0;
-}
-
-.form-cadastro {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
+    margin-bottom: 40px;
 }
 
 h3 {
@@ -153,18 +169,17 @@ h3 {
     text-align: left;
 }
 
-.link-primario {
-    border: none;
-    padding: 10px 0 0 5px;
-    color: var(--text-secundario);
-    text-decoration: none;
-}
 
-.link-primario:hover {
-    border: none;
-    width: fit-content;
-    padding: 10px 0 0 5px;
+/* CARDS E CONTAINERS */
+
+.card-primary {
+    width: 80%;
     color: var(--text-primario);
+    background-color: transparent;
+    border: 1px solid var(--border-primario);
+    border-radius: 7px;
+    padding: 10px 20px;
+    margin-bottom: 7px;
     text-decoration: none;
 }
 
@@ -176,42 +191,49 @@ h3 {
 
 .cont-ico {
     display: flex;
-    flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 30px;
     margin-top: 10px;
 }
 
-.card-primary, input {
-    color: var(--text-primario);
-    background-color: transparent;
-    width: 80%;
-    border: solid 1px var(--border-primario);
-    border-radius: 7px;
-    padding: 10px 20px;
-    margin-bottom: 7px;
-    text-decoration: none;
-}
 
-.alig-left {
-    text-align: left;
-}
+/* SELECT PADRÃO */
 
-.select-primario {    
-    color: var(--text-primario);
-    background-color: transparent;
+.select-primario {
     width: auto;
-    border: solid 1px var(--border-primario);
+    color: var(--text-primario);
+    background-color: transparent;
+    border: 1px solid var(--border-primario);
     border-radius: 7px;
     padding: 10px 20px;
     margin-bottom: 7px;
-    text-decoration: none;
     cursor: pointer;
 }
 
-.btn-meus_livros {
-    background:none;
-    border:none;
-    padding:0;
-    cursor:pointer;
+
+/* SELECT CUSTOMIZADO */
+
+.meu-select {
+    width: 250px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #555;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.meu-select:hover {
+    border-color: #ca393e;
+}
+
+.meu-select:focus {
+    border-color: #ca393e;
+    box-shadow: 0 0 5px #ca393e;
 }
