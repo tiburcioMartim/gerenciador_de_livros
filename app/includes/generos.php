@@ -1,4 +1,4 @@
-<select class="select-primario meu-select" name="genero" required>
+<select class="select-primario" name="genero" required>
     <option value="" disabled selected>Selecione o gênero</option>
     <option value="fantasia">Fantasia</option>
     <option value="comedia">Comédia</option>

@@ -202,38 +202,15 @@ h3 {
 .select-primario {
     width: auto;
     color: var(--text-primario);
-    background-color: transparent;
+    background-color: var(--bg-secundario);
     border: 1px solid var(--border-primario);
     border-radius: 7px;
     padding: 10px 20px;
     margin-bottom: 7px;
     cursor: pointer;
-}
 
-
-/* SELECT CUSTOMIZADO */
-
-.meu-select {
-    width: 250px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 2px solid #555;
-    background-color: #1e1e1e;
-    color: #fff;
-    font-size: 16px;
     outline: none;
-    cursor: pointer;
-
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-}
-
-.meu-select:hover {
-    border-color: #ca393e;
-}
-
-.meu-select:focus {
-    border-color: #ca393e;
-    box-shadow: 0 0 5px #ca393e;
 }
