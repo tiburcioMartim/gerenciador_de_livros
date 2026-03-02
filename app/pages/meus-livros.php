@@ -47,9 +47,11 @@ MeusLivros($conn);
                 <div class="cont-ico">
                     <form method="POST">
                         <input type="hidden" name="deletar_id" value="<?= $row['id'] ?>">
-                        <button type="submit" class="btn-meus_livros">
-                            <img src="/6_gerenciamento_de_livros/app/assets/botao-apagar.png">
-                        </button>
+                        <button type="submit" class="btn-secundario">Deletar</button>
+                    </form>
+                    <form action="" method="get">
+                        <input type="hidden" name="deletar_id" value="<?= $row['id'] ?>">
+                        <button type="submit" class="btn-secundario">Editar</button>
                     </form>
                 </div>
             </div>
