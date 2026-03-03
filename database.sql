@@ -67,3 +67,70 @@ update usuarios set nome = 'João Carlos de Almeida' where id = 1;
 
 -- Deletar conta do usuário     [D]
 delete from usuarios where id = 1;
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------
+--------------------------------[ Querys para Base de dados | Livros ]--------------------------------
+------------------------------------------------------------------------------------------------------
+INSERT INTO registrar_livro (nome, ano_publicação, genero) VALUES
+('Dom Casmurro', 1899, 'Romance'),
+('O Pequeno Príncipe', 1943, 'Fábula'),
+('1984', 1949, 'Distopia'),
+('A Revolução dos Bichos', 1945, 'Satira'),
+('O Hobbit', 1937, 'Fantasia'),
+('Harry Potter e a Pedra Filosofal', 1997, 'Fantasia'),
+('Senhor dos Aneis', 1954, 'Fantasia'),
+('O Codigo Da Vinci', 2003, 'Suspense'),
+('Crepusculo', 2005, 'Romance'),
+('Jogos Vorazes', 2008, 'Distopia'),
+
+('It - A Coisa', 1986, 'Terror'),
+('Dracula', 1897, 'Terror'),
+('Frankenstein', 1818, 'Terror'),
+('A Culpa é das Estrelas', 2012, 'Romance'),
+('Extraordinario', 2012, 'Drama'),
+('O Alquimista', 1988, 'Ficcao'),
+('Capitaes da Areia', 1937, 'Drama'),
+('Memorias Postumas de Bras Cubas', 1881, 'Romance'),
+('A Cabana', 2007, 'Drama'),
+('O Diario de Anne Frank', 1947, 'Biografia'),
+
+('Percy Jackson', 2005, 'Fantasia'),
+('Maze Runner', 2009, 'Distopia'),
+('Duna', 1965, 'Ficcao Cientifica'),
+('O Iluminado', 1977, 'Terror'),
+('Sherlock Holmes', 1892, 'Misterio'),
+('A Menina que Roubava Livros', 2005, 'Drama'),
+('As Cronicas de Narnia', 1950, 'Fantasia'),
+('O Senhor das Moscas', 1954, 'Drama'),
+('Orgulho e Preconceito', 1813, 'Romance'),
+('A Metamorfose', 1915, 'Ficcao'),
+
+('O Poder do Habito', 2012, 'Autoajuda'),
+('Pai Rico Pai Pobre', 1997, 'Financas'),
+('Mindset', 2006, 'Desenvolvimento Pessoal'),
+('O Milagre da Manha', 2012, 'Autoajuda'),
+('Sapiens', 2011, 'Historia'),
+('A Arte da Guerra', 500, 'Estrategia'),
+('O Nome do Vento', 2007, 'Fantasia'),
+('A Garota no Trem', 2015, 'Suspense'),
+('O Codigo Limpo', 2008, 'Tecnologia'),
+('Use a Cabeca Java', 2003, 'Tecnologia'),
+
+('Introducao ao MySQL', 2015, 'Tecnologia'),
+('PHP para Iniciantes', 2018, 'Tecnologia'),
+('Banco de Dados Avancado', 2020, 'Tecnologia'),
+('Aprendendo JavaScript', 2019, 'Tecnologia'),
+('Estruturas de Dados', 2017, 'Tecnologia'),
+('Algoritmos Descomplicados', 2016, 'Tecnologia'),
+('Redes de Computadores', 2014, 'Tecnologia'),
+('Engenharia de Software', 2013, 'Tecnologia'),
+('Inteligencia Artificial', 2021, 'Tecnologia'),
+('Cyberseguranca Moderna', 2022, 'Tecnologia');

@@ -41,7 +41,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     width: 393px;
-    height: 100%;
+    height: max-content;
     padding: 0 10px 150px 10px;
     background-color: var(--bg-secundario);
 }
@@ -213,4 +213,67 @@ h3 {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+.campo-edicao {
+    display: none;
+}
+
+.campo-edicao.ativo {
+    display: block;
+}
+
+.campo-edicao input,
+.campo-edicao select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.botoes-edicao {
+    display: none;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.botoes-edicao.ativo {
+    display: flex;
+}
+
+.btn-salvar,
+.btn-cancelar {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-salvar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-salvar:hover {
+    background-color: #45a049;
+}
+
+.btn-cancelar {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #da190b;
+}
+
+.info-display {
+    display: block;
+}
+
+.info-display.oculto {
+    display: none;
 }
