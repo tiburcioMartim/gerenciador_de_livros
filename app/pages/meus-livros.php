@@ -40,10 +40,10 @@ MeusLivros($conn);
                         <input type="text" id="nome-input-<?= $row['id'] ?>" value="<?= htmlspecialchars($row['nome']) ?>">
 
                         <label><b>Publicação:</b></label>
-                        <input type="text" id="ano-input-<?= $row['id'] ?>" value="<?= htmlspecialchars($row['ano_publicação']) ?>">
+                        <input type="text" id="ano-input-<?= $row['id'] ?>" placeholder="Exe.: 1994" value="<?= htmlspecialchars($row['ano_publicação']) ?>">
 
                         <label><b>Gênero:</b></label>
-                        <input type="text" id="genero-input-<?= $row['id'] ?>" value="<?= htmlspecialchars($row['genero']) ?>">
+                        <?php require __DIR__ . '/../includes/generos.php'; ?>
                     </div>
 
                     <!-- Botões -->

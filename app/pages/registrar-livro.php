@@ -29,7 +29,7 @@ require_once __DIR__ . '/../includes/functions-js.php';
                 <input type="text" name="nome_livro" placeholder="Qual é o e-book?" required>
 
                 <label for="ano_publicacao">Ano de publicação: </label>
-                <input type="date" name="ano_publicacao" placeholder="Quando que foi publicado?" required>
+                <input type="number" name="ano_publicacao" placeholder="Quando que foi publicado?" required>
 
                 <label for="genero">Gênero: </label>
                 <?php require_once __DIR__ . '/../includes/generos.php'; ?>

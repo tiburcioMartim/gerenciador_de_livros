@@ -208,11 +208,15 @@ h3 {
     padding: 10px 20px;
     margin-bottom: 7px;
     cursor: pointer;
-
+    color: var(--text-secundario);
     outline: none;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+#option-vazio {
+    color: var(--text-secundario);
 }
 
 .campo-edicao {

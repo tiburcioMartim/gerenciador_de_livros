@@ -1,12 +1,12 @@
-<select class="select-primario" name="genero" required>
-    <option value="" disabled selected>Selecione o gênero</option>
-    <option value="fantasia">Fantasia</option>
-    <option value="comedia">Comédia</option>
-    <option value="drama">Drama</option>
-    <option value="infantil">Infantil</option>
+<select class="select-primario" id="genero-input-<?= $row['id'] ?>" value="<?= htmlspecialchars($row['genero']) ?>" name="genero" required>
+    <option id="option-vazio" value="" disabled selected>Selecione o gênero</option>
     <option value="romance">Romance</option>
-    <option value="aventura">Aventura</option>
-    <option value="ficcao">Ficção</option>
-    <option value="luta">Luta</option>
     <option value="terror">Terror</option>
+    <option value="drama">Drama</option>
+    <option value="ficcao">Ficção</option>
+    <option value="aventura">Aventura</option>
+    <option value="misterio">Mistério</option>
+    <option value="biografia">Biografia</option>
+    <option value="historia">História</option>
+    <option value="tecnologia">Tecnologia</option>
 </select>
