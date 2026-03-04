@@ -1,18 +1,14 @@
 <?php
-header('Content-Type: application/json');
+header('content-type: application/json; charset=utf-8');
 require_once __DIR__ . '/config/database.php';
-require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/includes/functions-php.php';
+// api.php não pode haver nada de HTML ou JS, senão a resposta JSON irá quebrar.
+// Deixe a lógica JS em arquivos separados.
 
 $response = ['sucesso' => false, 'mensagem' => ''];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $acao = $_POST['acao'] ?? '';
-
-
-
-
-
-
     if ($acao === 'deletar') {
         $id = intval($_POST['id'] ?? 0);
         if ($id > 0) {
@@ -42,11 +38,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
-
-
-
-
-header('content-type: application/json; charset=utf-8');
 echo json_encode($response);
 exit();

@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../includes/functions.php';
+require_once __DIR__ . '/../includes/functions-php.php';
+require_once __DIR__ . '/../includes/functions-js.php';
 
 // carregar lista de livros para exibição
 MeusLivros($conn);
@@ -47,8 +48,8 @@ MeusLivros($conn);
 
                     <!-- Botões -->
                     <div class="cont-ico">
-                        <button type="button" class="btn-secundario campo-edicao ativo" id="btn-editar-<?php echo $row['id'];?>" onclick="editarLivro(<?= $row['id'] ?>, event)">Editar</button>
-                        <button type="button" class="btn-secundario campo-edicao ativo" id="btn-deletar-<?php echo $row['id']?>" onclick="deletarLivro(<?= $row['id'] ?>, event)">Deletar</button>
+                        <button type="button" class="btn-secundario campo-edicao ativo" id="btn-editar-<?php echo $row['id']; ?>" onclick="editarLivro(<?= $row['id'] ?>, event)">Editar</button>
+                        <button type="button" class="btn-secundario campo-edicao ativo" id="btn-deletar-<?php echo $row['id'] ?>" onclick="deletarLivro(<?= $row['id'] ?>, event)">Deletar</button>
                     </div>
 
                     <!-- Botões de edicao -->
@@ -63,13 +64,5 @@ MeusLivros($conn);
         <?php endif; ?>
 
     </section>
-
-    <script>
-        editarLivro(id, event);
-        cancelarEdicao(id, event);
-        salvarLivro(id, event);
-        deletarLivro(id, event);
-    </script>
 </body>
-
 </html>
