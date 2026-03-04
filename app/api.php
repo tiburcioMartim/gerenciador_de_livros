@@ -7,7 +7,12 @@ $response = ['sucesso' => false, 'mensagem' => ''];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $acao = $_POST['acao'] ?? '';
-    
+
+
+
+
+
+
     if ($acao === 'deletar') {
         $id = intval($_POST['id'] ?? 0);
         if ($id > 0) {
@@ -37,5 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+
+
+
+
+
+header('content-type: application/json; charset=utf-8');
 echo json_encode($response);
-?>
+exit();

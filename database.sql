@@ -60,7 +60,7 @@ delete from registrar_livro where id = 1;
 
 -- Cadastrar usuário    [C]
 INSERT INTO usuarios (cpf, nome, sexo, nascimento, telefone, email) VALUES 
-('11376554746', 'Martim Tiburcio de Medeiros Júnior', 'M', '1992-12-02', '021988860136', 'tiburcio.contato@gmail.com');
+('74291538046', 'João Henrique Souza Martins', 'M', '1993-09-14', '021988860136', 'joao.martins93@example.com');
 
 -- Alterar dados do usuário     [U]
 update usuarios set nome = 'João Carlos de Almeida' where id = 1;
@@ -90,7 +90,6 @@ INSERT INTO registrar_livro (nome, ano_publicação, genero) VALUES
 ('O Codigo Da Vinci', 2003, 'Suspense'),
 ('Crepusculo', 2005, 'Romance'),
 ('Jogos Vorazes', 2008, 'Distopia'),
-
 ('It - A Coisa', 1986, 'Terror'),
 ('Dracula', 1897, 'Terror'),
 ('Frankenstein', 1818, 'Terror'),
@@ -101,7 +100,6 @@ INSERT INTO registrar_livro (nome, ano_publicação, genero) VALUES
 ('Memorias Postumas de Bras Cubas', 1881, 'Romance'),
 ('A Cabana', 2007, 'Drama'),
 ('O Diario de Anne Frank', 1947, 'Biografia'),
-
 ('Percy Jackson', 2005, 'Fantasia'),
 ('Maze Runner', 2009, 'Distopia'),
 ('Duna', 1965, 'Ficcao Cientifica'),
@@ -112,7 +110,6 @@ INSERT INTO registrar_livro (nome, ano_publicação, genero) VALUES
 ('O Senhor das Moscas', 1954, 'Drama'),
 ('Orgulho e Preconceito', 1813, 'Romance'),
 ('A Metamorfose', 1915, 'Ficcao'),
-
 ('O Poder do Habito', 2012, 'Autoajuda'),
 ('Pai Rico Pai Pobre', 1997, 'Financas'),
 ('Mindset', 2006, 'Desenvolvimento Pessoal'),
@@ -123,7 +120,6 @@ INSERT INTO registrar_livro (nome, ano_publicação, genero) VALUES
 ('A Garota no Trem', 2015, 'Suspense'),
 ('O Codigo Limpo', 2008, 'Tecnologia'),
 ('Use a Cabeca Java', 2003, 'Tecnologia'),
-
 ('Introducao ao MySQL', 2015, 'Tecnologia'),
 ('PHP para Iniciantes', 2018, 'Tecnologia'),
 ('Banco de Dados Avancado', 2020, 'Tecnologia'),

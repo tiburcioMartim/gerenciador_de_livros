@@ -97,6 +97,11 @@
         $stmt->close();
         return true;
     }
+
+
+    function debug($a) : bool {
+        return $a + ": Passou pelo debug.";
+    }
 ?>
 
 <!---------------------------------------------------------------------------->
@@ -175,7 +180,7 @@
 
     function deletarLivro(id, event) {
         event.preventDefault();
-        event.stopPropagation();
+        // event.stopPropagation();
 
         // if (!confirm('Deseja deletar este livro?')) {
         //     return;
@@ -188,6 +193,10 @@ console.log(formData.append('acao', 'deletar'))
         fetch('/6_gerenciamento_de_livros/app/api.php', {
                 method: 'POST',
                 body: formData
+            })
+            .then(response => {
+                console.log(response);
+                return response.json();
             })
             .then(response => response.json())
             .then(data => {
