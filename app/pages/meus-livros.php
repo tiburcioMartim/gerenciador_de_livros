@@ -1,4 +1,8 @@
 <?php
+//Variável global
+global $contagem_livros;
+
+// Includes
 require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../includes/functions-php.php';
 require_once __DIR__ . '/../includes/functions-js.php';
@@ -22,9 +26,14 @@ meusLivros($conn);
             <?php require_once __DIR__ . '/../includes/header.php'; ?>
         </div>
         <h3 class="alig-left">Meus livros</h3>
+        <p>Tenho <?php echo "<span id='contagem_livros_id'></span>"; ?> livros cadastrados.</p>
 
         <?php if (!empty($livros)): ?>
             <?php foreach ($livros as $row): ?>
+                <!-- Contando quantos livros têm. -->
+                <?php if ($row) {
+                    $contagem_livros = $contagem_livros + 1;
+                } ?>
                 <div class="alig-left card-primary cont-livros" id="livro-<?= $row['id'] ?>">
                     <!-- Exibição dos dados -->
                     <div class="info-display" id="info-<?= $row['id'] ?>">
@@ -59,10 +68,14 @@ meusLivros($conn);
                     </div>
                 </div>
             <?php endforeach; ?>
+            <script>
+                const trocar_valor = document.getElementById('contagem_livros_id').innerText = <?= htmlspecialchars(json_encode($contagem_livros), ENT_QUOTES, 'UTF-8') ?>;
+            </script>
         <?php else: ?>
             <p class="alig-left">Nenhum livro cadastrado.</p>
         <?php endif; ?>
 
     </section>
 </body>
+
 </html>
