@@ -1,7 +1,7 @@
 <?php
 function RegistrarLivro($conn, $dados)
 {
-  if (!empty($dados['livros'])) {
+  if (!empty($dados['registrar_livro'])) {
     $nome = $dados['nome_livro'];
     $ano_publicacao = $dados['ano_publicacao'];
     $genero = $dados['genero'];
