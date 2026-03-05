@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($acao === 'deletar') {
         $id = intval($_POST['id'] ?? 0);
         if ($id > 0) {
-            if (DeletarLivro($conn, $id)) {
+            if (deletarLivro($conn, $id)) {
                 $response['sucesso'] = true;
                 $response['mensagem'] = 'Livro deletado com sucesso.';
             }
