@@ -17,6 +17,7 @@ meusLivros($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com" />
     <link rel="stylesheet" href="/6_gerenciamento_de_livros/app/styles.css">
 </head>
 
@@ -25,8 +26,10 @@ meusLivros($conn);
         <div class="alig-center">
             <?php require_once __DIR__ . '/../includes/header.php'; ?>
         </div>
-        <h3 class="alig-left">Meus livros</h3>
-        <p>Tenho <?php echo "<span id='contagem_livros_id'></span>"; ?> livros cadastrados.</p>
+        <div class="cont-default">
+            <h3>Meus livros</h3>
+            <p>Tenho <?php echo "<span id='contagem_livros_id'></span>"; ?> livros cadastrados.</p>
+        </div>
 
         <?php if (!empty($livros)): ?>
             <?php foreach ($livros as $row): ?>
