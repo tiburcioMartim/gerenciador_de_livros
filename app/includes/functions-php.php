@@ -1,5 +1,5 @@
 <?php
-function RegistrarLivro($conn, $dados)
+function registrarLivro($conn, $dados)
 {
   if (!empty($dados['registrar_livro'])) {
     $nome = $dados['nome_livro'];
@@ -30,7 +30,7 @@ function RegistrarLivro($conn, $dados)
   }
 }
 
-function MeusLivros($conn)
+function meusLivros($conn)
 {
   // busca todos os livros e deixa disponível em $livros para a view
   $stmt = $conn->prepare('SELECT * FROM livros ORDER BY id DESC;');
@@ -55,7 +55,7 @@ function MeusLivros($conn)
   $stmt->close();
 }
 
-function DeletarLivro(mysqli $conn, int $id): bool
+function deletarLivro(mysqli $conn, int $id): bool
 {
   // prepara consulta usando placeholder e vincula parâmetro
   $stmt = $conn->prepare('DELETE FROM livros WHERE id = ?');
@@ -75,7 +75,7 @@ function DeletarLivro(mysqli $conn, int $id): bool
   return true;
 }
 
-function AtualizarLivro(mysqli $conn, int $id, string $nome, string $ano_publicacao, string $genero): bool
+function atualizarLivro(mysqli $conn, int $id, string $nome, string $ano_publicacao, string $genero): bool
 {
   // prepara consulta de atualização
   $stmt = $conn->prepare('UPDATE livros SET nome = ?, ano_publicação = ?, genero = ? WHERE id = ?');

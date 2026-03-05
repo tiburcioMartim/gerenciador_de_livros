@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/functions-php.php';
 require_once __DIR__ . '/../includes/functions-js.php';
 
 // carregar lista de livros para exibição
-MeusLivros($conn);
+meusLivros($conn);
 ?>
 
 <!DOCTYPE html>
