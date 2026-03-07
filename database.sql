@@ -1,5 +1,5 @@
 ```     [ Querys para Base de dados | Livros ]
-    INSERT INTO livros (nome, ano_publicação, genero) VALUES
+    INSERT INTO livros (nome, ano_publicacao, genero) VALUES
     ('Dom Casmurro', 1899, 'romance'),
     ('O Pequeno Príncipe', 1943, 'fantasia'),
     ('1984', 1949, 'ficcao'),

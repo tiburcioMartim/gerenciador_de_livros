@@ -39,7 +39,7 @@ meusLivros($conn);
                     <div class="info-display" id="info-<?= $row['id'] ?>">
                         <p><b>ID: </b><?= (int)($row['id']) ?></p>
                         <p><b>Nome: </b><span id="nome-display-<?= $row['id'] ?>"><?= htmlspecialchars($row['nome']) ?></span></p>
-                        <p><b>Publicação: </b><span id="ano-display-<?= $row['id'] ?>"><?= htmlspecialchars($row['ano_publicação']) ?></span></p>
+                        <p><b>Publicação: </b><span id="ano-display-<?= $row['id'] ?>"><?= htmlspecialchars($row['ano_publicacao']) ?></span></p>
                         <p><b>Gênero: </b><span id="genero-display-<?= $row['id'] ?>"><?= htmlspecialchars($row['genero']) ?></span></p>
                     </div>
 
@@ -49,7 +49,7 @@ meusLivros($conn);
                         <input type="text" id="nome-input-<?= $row['id'] ?>" value="<?= htmlspecialchars($row['nome']) ?>">
 
                         <label><b>Publicação:</b></label>
-                        <input type="text" id="ano-input-<?= $row['id'] ?>" placeholder="Exe.: 1994" value="<?= htmlspecialchars($row['ano_publicação']) ?>">
+                        <input type="text" id="ano-input-<?= $row['id'] ?>" placeholder="Exe.: 1994" value="<?= htmlspecialchars($row['ano_publicacao']) ?>">
 
                         <label><b>Gênero:</b></label>
                         <?php require __DIR__ . '/../includes/generos.php'; ?>

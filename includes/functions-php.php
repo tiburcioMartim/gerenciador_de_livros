@@ -1,15 +1,28 @@
 <?php
 function registrarLivro($conn, $dados)
 {
+
+  // echo "<br><br><pre>";   //////////////////////// DEBUGANDO
+  // echo var_dump($dados);  //////////////////////// DEBUGANDO
+  // echo "<br><br></pre>";  //////////////////////// DEBUGANDO
+
   if (!empty($dados['registrar_livro'])) {
     $nome = $dados['nome_livro'];
     $ano_publicacao = $dados['ano_publicacao'];
     $genero = $dados['genero'];
 
-    $stmt = $conn->prepare("INSERT INTO livros (nome, ano_publicação, genero) VALUES (?, ?, ?)");
+    // echo "<br><br><pre>";  //////////////////////// DEBUGANDO
+    // echo var_dump($conn);  //////////////////////// DEBUGANDO
+    // echo "<br><br></pre>"; //////////////////////// DEBUGANDO
 
+    $stmt = $conn->prepare("INSERT INTO livros (nome, ano_publicacao, genero) VALUES (?, ?, ?)");
+    echo "<br><br><pre>";  //////////////////////// DEBUGANDO
+    // echo var_dump(is_bool($stmt));  //////////////////////// DEBUGANDO
+    echo is_bool($stmt);  //////////////////////// DEBUGANDO
+    echo "<br><br></pre>"; //////////////////////// DEBUGANDO
     if ($stmt) {
       $stmt->bind_param("sss", $nome, $ano_publicacao, $genero);
+
 
       if ($stmt->execute()) {
         if ($stmt->affected_rows > 0) {
@@ -25,7 +38,7 @@ function registrarLivro($conn, $dados)
       // echo "<h3 style='color: green; text-align: center;'>Prepare concluído.</h3>";
 
     } else {
-      echo "<h3 style='color: red; text-align: center;'>Falha no prepare.</h3>";
+      die("Erro no prepare: ". $conn->error);
     }
   }
 }
@@ -78,7 +91,7 @@ function deletarLivro(mysqli $conn, int $id): bool
 function atualizarLivro(mysqli $conn, int $id, string $nome, string $ano_publicacao, string $genero): bool
 {
   // prepara consulta de atualização
-  $stmt = $conn->prepare('UPDATE livros SET nome = ?, ano_publicação = ?, genero = ? WHERE id = ?');
+  $stmt = $conn->prepare('UPDATE livros SET nome = ?, ano_publicacao = ?, genero = ? WHERE id = ?');
   if (!$stmt) {
     die("<p style='color:#f00;'>Erro no prepare (UPDATE): " . htmlspecialchars($conn->error) . "</p>");
   }

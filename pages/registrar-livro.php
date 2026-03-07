@@ -12,8 +12,9 @@ require_once __DIR__ . '/../includes/functions-js.php';
 </head>
 
 <body>
+    
     <?php registrarLivro($conn, $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT)); ?>
-
+    
     <section class="wid-mob">
         <div class="alig-center">
             <?php require_once __DIR__ . '/../includes/header.php'; ?>

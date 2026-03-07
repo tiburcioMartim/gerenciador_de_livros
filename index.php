@@ -5,11 +5,13 @@ require_once __DIR__ . '/config/database.php';
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php require_once __DIR__ . '/../includes/head.php'; ?>
+    <?php require_once __DIR__ . '/includes/head.php'; ?>
 </head>
 <body>
     <section class="wid-mob">
         <div class="alig-center">
+            <h2>Página inicial ainda não funciona:</h2>
+            <p>Clique em dashboard para ver o site</p>
             <img src="/assets/gerenciamento-de-ebook.png" alt="Imagem gerenciamento de ebook">
             <a class="btn-primary" href="/pages/cadastro-usuario.php">Cadastro</a>
             <a class="btn-primary" href="/pages/login.php">Login</a>
