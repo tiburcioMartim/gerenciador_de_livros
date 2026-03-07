@@ -11,6 +11,9 @@ require_once __DIR__ . '/config/database.php';
     <link rel="stylesheet" href="/6_gerenciamento_de_livros/app/styles.css">
 </head>
 <body>
+    <h1>Testando</h1>
+    <h1>Testando</h1>
+    <h1>Testando</h1>
     <section class="wid-mob">
         <div class="alig-center">
             <img src="/6_gerenciamento_de_livros/app/assets/gerenciamento-de-ebook.png" alt="Imagem gerenciamento de ebook">
