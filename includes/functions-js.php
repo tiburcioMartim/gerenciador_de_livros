@@ -43,7 +43,7 @@
     formData.append('ano_publicacao', ano);
     formData.append('genero', genero);
 
-    fetch('/6_gerenciamento_de_livros/app/api.php', {
+    fetch('/api.php', {
         method: 'POST',
         body: formData
       })
@@ -79,7 +79,7 @@
     formData.append('acao', 'deletar');
     formData.append('id', id);
 
-    fetch('/6_gerenciamento_de_livros/app/api.php', {
+    fetch('/api.php', {
         method: 'POST',
         body: formData
       })

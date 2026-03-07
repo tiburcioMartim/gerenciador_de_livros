@@ -18,7 +18,7 @@ meusLivros($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com" />
-    <link rel="stylesheet" href="/6_gerenciamento_de_livros/app/styles.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
